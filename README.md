@@ -35,12 +35,131 @@ KAOS Cipher is a novel stream cipher that leverages the mathematical properties 
 - Standard C library with math support
 
 ### Compilation
-```bash
-# Compile main cipher
+Compile main cipher
 gcc -O3 -o kaos src/kaos.c -lm
 
-# Compile file encryption module
+Compile file encryption module
 gcc -O3 -o kaos_file src/kaos_file.c -lm
 
-# Compile test suite
+Compile test suite
 gcc -O3 -o test_suite src/test_suite.c -lm
+
+
+
+### Basic Usage
+#include "kaos.h"
+
+KaosCipher cipher;
+kaos_init_default(&cipher);
+
+const char* message = "Hello, World!";
+const char* password = "MySecurePassword123";
+
+// Encrypt
+uint8_t* encrypted = kaos_encrypt(&cipher, (uint8_t*)message,
+strlen(message), password);
+
+// Decrypt
+uint8_t* decrypted = kaos_decrypt(&cipher, encrypted,
+strlen(message), password);
+
+
+
+### File Encryption
+Encrypt file
+./kaos_file encrypt document.txt document.kaos "Password123"
+
+Decrypt file
+./kaos_file decrypt document.kaos output.txt "Password123"
+
+
+
+## 📊 Performance
+
+| Platform | CPU | Throughput | Assessment |
+|----------|-----|------------|------------|
+| Desktop | Intel Pentium Gold G6405 | 49.26 MB/s | Verified |
+
+**Multi-platform benchmarking in progress...**
+
+## 🔍 Testing
+
+Run the comprehensive test suite:
+./test_suite
+
+
+
+The test suite includes:
+- NIST SP 800-22 statistical tests (13/15 passed)
+- Avalanche effect analysis (50.14%)
+- Entropy measurements (7.999808 bits/byte)  
+- Correlation analysis (0.000787 average)
+- Performance benchmarking
+- Key sensitivity tests (90%)
+
+## 📁 Project Structure
+kaos-cipher/
+├── src/ # Source code
+│ ├── kaos.c # Main cipher implementation
+│ ├── kaos_file.c # File encryption module
+│ └── test_suite.c # Comprehensive test suite
+├── papers/ # Academic papers
+│ ├── kaos_paper_english.pdf
+│ ├── kaos_paper_spanish.pdf
+│ └── source/ # LaTeX sources
+├── examples/ # Usage examples
+└── docs/ # Documentation
+
+
+
+## 📄 Academic Papers
+
+- **[English Paper](papers/kaos_paper_english.pdf)** - Complete academic paper
+- **[Spanish Paper](papers/kaos_paper_spanish.pdf)** - Paper en español
+- **IACR ePrint**: *Coming after multi-platform verification*
+
+## 🔧 Advanced Configuration
+
+### Custom Parameters
+KaosCipher cipher;
+kaos_init_advanced(&cipher, 12.0, 30.0, 2.8, 0.005, 3000);
+
+
+
+### Parameters Description
+- `sigma` (10.0): Prandtl number
+- `rho` (28.0): Rayleigh number
+- `beta` (8/3): Aspect ratio  
+- `dt` (0.01): Time step
+- `warmup` (2000): Chaotic system initialization steps
+
+## 🔬 Research Integrity
+
+This project emphasizes verifiable results and research transparency:
+- All cryptographic tests are reproducible
+- Performance data is empirically measured
+- Multi-platform verification in progress
+- Open methodology and implementation
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit pull requests or open issues for discussions.
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Edward Lorenz for the chaotic system discovery
+- NIST for statistical test suites
+- Cryptography research community
+
+## 📞 Contact
+
+**Simón Matías Guiñazú** - Independent Researcher  
+GitHub: [@sysphersec](https://github.com/sysphersec)
+
+---
+
+**⭐ Repository currently private pending multi-platform verification and academic publication**
