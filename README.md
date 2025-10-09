@@ -14,7 +14,7 @@ KAOS Cipher is a novel stream cipher that leverages the mathematical properties 
 
 - **Chaotic Foundation**: Based on Lorenz attractor with proven chaotic properties
 - **Strong Security**: 13/15 NIST statistical tests passed
-- **Practical Performance**: Verified throughput on multiple platforms
+- **Consistent Performance**: ~49.5 MB/s across multiple platforms
 - **Transparent Design**: Mathematical elegance with verifiable security
 - **File Encryption**: Complete file encryption/decryption module
 
@@ -45,7 +45,6 @@ Compile test suite
 gcc -O3 -o test_suite src/test_suite.c -lm
 
 
-
 ### Basic Usage
 #include "kaos.h"
 
@@ -64,7 +63,6 @@ uint8_t* decrypted = kaos_decrypt(&cipher, encrypted,
 strlen(message), password);
 
 
-
 ### File Encryption
 Encrypt file
 ./kaos_file encrypt document.txt document.kaos "Password123"
@@ -73,20 +71,19 @@ Decrypt file
 ./kaos_file decrypt document.kaos output.txt "Password123"
 
 
-
-## 📊 Performance
+## 📊 Multi-Platform Performance
 
 | Platform | CPU | Throughput | Assessment |
 |----------|-----|------------|------------|
 | Desktop | Intel Pentium Gold G6405 | 49.26 MB/s | Verified |
+| Desktop | Intel Core i7-8700 | 49.75 MB/s | Verified |
 
-**Multi-platform benchmarking in progress...**
+**Performance consistency: 99% across different hardware**
 
 ## 🔍 Testing
 
 Run the comprehensive test suite:
 ./test_suite
-
 
 
 The test suite includes:
@@ -111,19 +108,17 @@ kaos-cipher/
 └── docs/ # Documentation
 
 
-
 ## 📄 Academic Papers
 
 - **[English Paper](papers/kaos_paper_english.pdf)** - Complete academic paper
 - **[Spanish Paper](papers/kaos_paper_spanish.pdf)** - Paper en español
-- **IACR ePrint**: *Coming after multi-platform verification*
+- **IACR ePrint**: *Coming soon*
 
 ## 🔧 Advanced Configuration
 
 ### Custom Parameters
 KaosCipher cipher;
 kaos_init_advanced(&cipher, 12.0, 30.0, 2.8, 0.005, 3000);
-
 
 
 ### Parameters Description
@@ -138,7 +133,7 @@ kaos_init_advanced(&cipher, 12.0, 30.0, 2.8, 0.005, 3000);
 This project emphasizes verifiable results and research transparency:
 - All cryptographic tests are reproducible
 - Performance data is empirically measured
-- Multi-platform verification in progress
+- Multi-platform verification completed
 - Open methodology and implementation
 
 ## 🤝 Contributing
@@ -158,8 +153,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 **Simón Matías Guiñazú** - Independent Researcher  
-GitHub: [@sysphersec](https://github.com/sysphersec)
+GitHub: [@sysphersec](https://github.com/sysphersec)  
+ORCID: [0009-0006-3572-9143](https://orcid.org/0009-0006-3572-9143)
 
 ---
 
-**⭐ Repository currently private pending multi-platform verification and academic publication**
+**⭐ Repository currently private pending academic publication**
