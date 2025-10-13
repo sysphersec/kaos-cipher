@@ -46,6 +46,8 @@ gcc -O3 -o test_suite src/test_suite.c -lm
 
 
 ### Basic Usage
+```C++
+
 #include "kaos.h"
 
 KaosCipher cipher;
@@ -61,7 +63,7 @@ strlen(message), password);
 // Decrypt
 uint8_t* decrypted = kaos_decrypt(&cipher, encrypted,
 strlen(message), password);
-
+```
 
 ### File Encryption
 Encrypt file
@@ -95,17 +97,20 @@ The test suite includes:
 - Key sensitivity tests (90%)
 
 ## 📁 Project Structure
+
+```
 kaos-cipher/
-├── src/ # Source code
-│ ├── kaos.c # Main cipher implementation
-│ ├── kaos_file.c # File encryption module
-│ └── test_suite.c # Comprehensive test suite
-├── papers/ # Academic papers
-│ ├── kaos_paper_english.pdf
-│ ├── kaos_paper_spanish.pdf
-│ └── source/ # LaTeX sources
-├── examples/ # Usage examples
-└── docs/ # Documentation
+├── src/                    # Source code
+│   ├── kaos.c             # Main cipher implementation
+│   ├── kaos_file.c        # File encryption module
+│   └── test_suite.c       # Comprehensive test suite
+├── papers/                # Academic papers
+│   ├── kaos_paper_english.pdf
+│   ├── kaos_paper_spanish.pdf
+│   └── source/            # LaTeX sources
+├── examples/              # Usage examples
+└── docs/                  # Documentation
+```
 
 
 ## 📄 Academic Papers
