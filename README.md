@@ -14,9 +14,7 @@ KAOS Cipher is a novel stream cipher that leverages the mathematical properties 
 
 - **Chaotic Foundation**: Based on Lorenz attractor with proven chaotic properties
 - **Strong Security**: 13/15 NIST statistical tests passed
-- **Consistent Performance**: ~49.5 MB/s across multiple platforms
 - **Transparent Design**: Mathematical elegance with verifiable security
-- **File Encryption**: Complete file encryption/decryption module
 
 ## 🔬 Cryptographic Properties
 
@@ -27,12 +25,6 @@ KAOS Cipher is a novel stream cipher that leverages the mathematical properties 
 | Average Correlation | 0.000787 | Excellent |
 | NIST Tests Passed | 13/15 | Strong |
 | Key Sensitivity | 90.0% | High |
-
-## 🚀 Quick Start
-
-### Prerequisites
-- GCC or Clang compiler
-- Standard C library with math support
 
 ## 🛠️ Compilation
 
@@ -77,30 +69,6 @@ strlen(message), password);
 ./kaos_file decrypt document.kaos output.txt "Password123"
 ```
 
-
-## 📊 Multi-Platform Performance
-
-| Platform | CPU | Throughput | Assessment |
-|----------|-----|------------|------------|
-| Desktop | Intel Pentium Gold G6405 | 49.26 MB/s | Verified |
-| Desktop | Intel Core i7-8700 | 49.75 MB/s | Verified |
-
-**Performance consistency: 99% across different hardware**
-
-## 🔍 Testing
-
-Run the comprehensive test suite:
-./test_suite
-
-
-The test suite includes:
-- NIST SP 800-22 statistical tests (13/15 passed)
-- Avalanche effect analysis (50.14%)
-- Entropy measurements (7.999808 bits/byte)  
-- Correlation analysis (0.000787 average)
-- Performance benchmarking
-- Key sensitivity tests (90%)
-
 ## 📁 Project Structure
 
 ```
@@ -123,20 +91,6 @@ kaos-cipher/
 - **[English Paper](papers/kaos_paper_english.pdf)** - Complete academic paper
 - **[Spanish Paper](papers/kaos_paper_spanish.pdf)** - Paper en español
 - **IACR ePrint**: *Coming soon*
-
-## 🔧 Advanced Configuration
-
-### Custom Parameters
-KaosCipher cipher;
-kaos_init_advanced(&cipher, 12.0, 30.0, 2.8, 0.005, 3000);
-
-
-### Parameters Description
-- `sigma` (10.0): Prandtl number
-- `rho` (28.0): Rayleigh number
-- `beta` (8/3): Aspect ratio  
-- `dt` (0.01): Time step
-- `warmup` (2000): Chaotic system initialization steps
 
 ## 🔬 Research Integrity
 
