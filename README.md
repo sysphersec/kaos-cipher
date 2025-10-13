@@ -34,16 +34,18 @@ KAOS Cipher is a novel stream cipher that leverages the mathematical properties 
 - GCC or Clang compiler
 - Standard C library with math support
 
-### Compilation
-Compile main cipher
+## 🛠️ Compilation
+
+```bash
+# Compile main cipher
 gcc -O3 -o kaos src/kaos.c -lm
 
-Compile file encryption module
+# Compile file encryption module  
 gcc -O3 -o kaos_file src/kaos_file.c -lm
 
-Compile test suite
+# Compile test suite
 gcc -O3 -o test_suite src/test_suite.c -lm
-
+```
 
 ### Basic Usage
 ```C++
@@ -65,12 +67,15 @@ uint8_t* decrypted = kaos_decrypt(&cipher, encrypted,
 strlen(message), password);
 ```
 
-### File Encryption
-Encrypt file
+## 🔒 File Encryption
+
+```bash
+# Encrypt file
 ./kaos_file encrypt document.txt document.kaos "Password123"
 
-Decrypt file
+# Decrypt file
 ./kaos_file decrypt document.kaos output.txt "Password123"
+```
 
 
 ## 📊 Multi-Platform Performance
