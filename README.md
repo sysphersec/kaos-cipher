@@ -29,7 +29,7 @@ KAOS Cipher is a novel stream cipher that leverages the mathematical properties 
 | NIST STS Pass Rate | 99%+ | Validated |
 | Performance | 50-70 MB/s | Practical |
 
-### Basic Usage
+## 🔧  Basic Usage
 ```c
 #include "kaos.h"
 #include <string.h>
