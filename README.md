@@ -68,24 +68,6 @@ strlen(message), password);
 # Decrypt file
 ./kaos_file decrypt document.kaos output.txt "Password123"
 ```
-
-## 📁 Project Structure
-
-```
-kaos-cipher/
-├── src/                    # Source code
-│   ├── kaos.c             # Main cipher implementation
-│   ├── kaos_file.c        # File encryption module
-│   └── test_suite.c       # Comprehensive test suite
-├── papers/                # Academic papers
-│   ├── kaos_paper_english.pdf
-│   ├── kaos_paper_spanish.pdf
-│   └── source/            # LaTeX sources
-├── examples/              # Usage examples
-└── docs/                  # Documentation
-```
-
-
 ## 📄 Academic Papers
 
 - **[English Paper](papers/kaos_paper_english.pdf)** - Complete academic paper
