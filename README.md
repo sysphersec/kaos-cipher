@@ -69,6 +69,7 @@ strlen(message), key, nonce);
 - Overall Pass Rate: 99%+
 
 🔬 Research Integrity  
+
 This project emphasizes verifiable results and research transparency:  
 
 - All cryptographic tests are reproducible with fixed test vectors
