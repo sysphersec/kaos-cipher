@@ -54,7 +54,7 @@ int main() {
     return 0;
 }
 ```
-Compile: `gcc -o example example.c ./src/kaos.c -I../src -lm`   
+Compile: `gcc -o example example.c ./src/kaos.c -I./src -lm`   
 
 ## 📊 Cryptographic Validation
 
