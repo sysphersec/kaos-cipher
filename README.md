@@ -33,6 +33,7 @@ KAOS Cipher is a novel stream cipher that leverages the mathematical properties 
 ```c
 #include "kaos.h"
 #include <string.h>
+#include <stdlib.h>
 
 int main() {
     KaosCipher cipher;
@@ -53,7 +54,7 @@ int main() {
     return 0;
 }
 ```
-Compile: `gcc -o example example.c ../src/kaos.c -I../src -lm`   
+Compile: `gcc -o example example.c ./src/kaos.c -I../src -lm`   
 
 ## 📊 Cryptographic Validation
 
