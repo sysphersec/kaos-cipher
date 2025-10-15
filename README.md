@@ -30,72 +30,96 @@ KAOS Cipher is a novel stream cipher that leverages the mathematical properties 
 | Performance | 50-70 MB/s | Practical |
 
 ### Basic Usage
-```C
+```c
 #include "kaos.h"
+#include <string.h>
 
-KaosCipher cipher;
-kaos_init(&cipher);
-
-uint8_t key[32];      // 256-bit key
-uint8_t nonce[12];    // 96-bit nonce
-const char* message = "Hello, World!";
-
-// Encrypt
-uint8_t* encrypted = kaos_encrypt(&cipher, (uint8_t*)message,
-strlen(message), key, nonce);
-
-// Decrypt
-uint8_t* decrypted = kaos_decrypt(&cipher, encrypted,
-strlen(message), key, nonce);
+int main() {
+    KaosCipher cipher;
+    kaos_init(&cipher);
+    
+    uint8_t key[32] = {0};      // 256-bit key
+    uint8_t nonce[12] = {0};    // 96-bit nonce
+    char message[] = "Secret";
+    
+    // Encrypt & Decrypt
+    uint8_t* encrypted = kaos_encrypt(&cipher, (uint8_t*)message, 
+                                     strlen(message), key, nonce);
+    uint8_t* decrypted = kaos_decrypt(&cipher, encrypted, 
+                                     strlen(message), key, nonce);
+    
+    free(encrypted);
+    free(decrypted);
+    return 0;
+}
 ```
-📊 Validation Results
+Compile: `gcc -o example example.c ../src/kaos.c -I../src -lm`   
 
-### ENT Analysis
-- Entropy: 7.999998 bits/byte (near perfect)
-- Chi-square: 235.38 (80.58% random)
-- Arithmetic Mean: 127.4995 (ideal: 127.5)
-- Serial Correlation: -0.000036 (near zero)
-- Dieharder Suite (111/114 passed)
-- Birthdays, Operm5, Rank Tests: 100% passed
-- Count Tests, Parking Lot/Spheres: 100% passed
-- RGB Tests: 57/58 (98.3%) passed
-- STS Tests: 34/36 (94.4%) passed
+## 📊 Cryptographic Validation
 
-### NIST Statistical Suite
+### ENT Test Suite Results
+| Metric | Value | Assessment |
+|--------|-------|------------|
+| Shannon Entropy | 7.999998 bits/byte | Near-perfect |
+| Chi-square | 235.38 | 80.58% random |
+| Arithmetic Mean | 127.4995 | Ideal (127.5) |
+| Serial Correlation | -0.000036 | Near-zero |
 
-- Frequency, Block Frequency, Cumulative Sums: PASSED
-- Runs, Longest Run, Rank, FFT: PASSED
-- NonOverlapping Template: 148/149 (99.3%)
-- Overall Pass Rate: 99%+
+### Dieharder Battery (111/114 passed)
+| Test Category | Passed | Rate |
+|---------------|--------|------|
+| Birthdays, Operm5, Rank | 4/4 | 100% |
+| Count Tests, Parking Lot | 5/5 | 100% |
+| RGB Tests | 57/58 | 98.3% |
+| STS Tests | 34/36 | 94.4% |
 
-🔬 Research Integrity  
+### NIST Statistical Test Suite
 
-This project emphasizes verifiable results and research transparency:  
+| Test Category | Results | Pass Rate |
+|---------------|---------|-----------|
+| Core Tests | Frequency, Block Frequency, Cumulative Sums | 100% |
+| Advanced Tests | Runs, Longest Run, Rank, FFT | 100% |
+| NonOverlapping Template | 148/149 tests passed | 99.3% |
+| Overall Suite | All required tests | 99%+ |
+---
 
-- All cryptographic tests are reproducible with fixed test vectors
-- Performance data is empirically measured across multiple platforms
-- Complete mathematical foundation based on Lorenz chaotic system
-- Open methodology and implementation for peer review
+## 🔬 Research & Integrity
 
-📄 Academic Papers  
-English Paper - Complete academic paper with formal validation    
-Spanish Paper - Paper en español    
-IACR ePrint: Coming soon  
+- **Verifiable Results**: All tests reproducible with fixed vectors  
+- **Mathematical Foundation**: Based on established Lorenz chaotic system  
+- **Open Methodology**: Complete transparency for peer review  
 
-🤝 Contributing  
-Contributions are welcome! Please feel free to submit pull requests or open issues for discussions.
+---
 
-📜 License  
-This project is licensed under the MIT License - see the LICENSE file for details.
+## 📚 Academic Papers
 
-🙏 Acknowledgments  
-- Edward Lorenz for the chaotic system discovery  
-- NIST for statistical test suites  
-- Dieharder and ENT test suite developers  
-- Cryptography research community  
+- **[English Paper](Paper/document.pdf)** - Complete formal validation
+- **[Spanish Paper](Paper/document_es.pdf)** - Paper en español
+- **IACR ePrint**: *Coming soon*
 
-📞 Contact  
-Simón M. Guiñazú - Independent Researcher  
-GitHub: @sysphersec  
-Email: sysphersec@gmail.com  
-ORCID: 0009-0006-3572-9143  
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Feel free to:
+- Submit pull requests
+- Open issues for discussion
+- Suggest improvements or tests
+
+## 📜 License
+
+MIT Licensed - See [LICENSE](LICENSE) for details.
+
+## 🙏 Acknowledgments
+
+- **Edward Lorenz** - Chaotic system discovery
+- **Test Suite Developers** - NIST STS, Dieharder, ENT teams  
+- **Cryptography Research Community** - Ongoing advancements
+
+## 📞 Contact
+
+**Simón M. Guiñazú** - Independent Researcher  
+📧 Email: sysphersec@gmail.com  
+🔐 PGP: `5E5B 6B66 F095 8A24 AEA1 1CA9 854E 0825 E334 6C93`  
+🔗 GitHub: [@sysphersec](https://github.com/sysphersec)  
+📚 ORCID: [0009-0006-3572-9143](https://orcid.org/0009-0006-3572-9143)
