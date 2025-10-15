@@ -1,27 +1,26 @@
 # KAOS Cipher - Keystream Generator
 
-Cryptographic keystream generator for the KAOS-256 chaotic stream cipher.
+Cryptographic keystream generator for the KAOS-256 chaotic stream cipher.  
 Generates high-quality pseudorandom sequences for cryptographic validation and testing.
 
 ## Features
 
-- 256-bit keys & 96-bit nonces - Professional cryptographic parameters
+- 256-bit keys & 96-bit nonces - Cryptographic parameters
 - Lorenz attractor-based - Chaotic system for unpredictability
 - Reproducible output - Fixed test vectors for consistent validation
-- Performance metrics - Throughput and quality analysis
 - Multiple test suite ready - Output compatible with NIST STS, Dieharder, ENT
 
 ## Usage
 
-# Compile
+## Compile
 ```bash 
 make
 ```
-# Generate keystream for testing
+## Generate keystream for testing
 ```bash 
 ./keystream_generator <size_in_bytes> <output_file>
 ```
-### Examples
+## Examples
 
 ## 1MB for quick validation
 ```bash 
@@ -50,10 +49,6 @@ ENT | 1 MB | 10 MB
 Dieharder | 100 MB | 1 GB
 NIST STS | 1 MB | 100 MB
 TestU01 | 1 GB | 10 GB
-
-## Integration
-
-Uses the core KAOS library from ../src/ with fixed test parameters for reproducible cryptographic validation.
 
 ---
 Part of the KAOS Cipher project - Chaotic cryptography based on Lorenz attractor
