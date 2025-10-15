@@ -1,6 +1,7 @@
 # KAOS Cipher - Core Library
 
-Core implementation of the KAOS-256 chaotic stream cipher based on the Lorenz attractor. Professional cryptographic library with 256-bit keys and 96-bit nonces.
+Core implementation of the KAOS-256 chaotic stream cipher based on the Lorenz attractor.  
+Professional cryptographic library with 256-bit keys and 96-bit nonces.
 
 ## Overview
 
@@ -42,8 +43,8 @@ Encryption/Decryption
 // Encryption
 uint8_t* ciphertext = kaos_encrypt(&cipher, plaintext, length, key, nonce);
 ```
-// Decryption (identical operation due to XOR symmetry)
 ```c
+// Decryption (identical operation due to XOR symmetry)
 uint8_t* decrypted = kaos_decrypt(&cipher, ciphertext, length, key, nonce);
 ```
 Low-level Functions
