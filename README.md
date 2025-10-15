@@ -68,8 +68,8 @@ strlen(message), key, nonce);
 - NonOverlapping Template: 148/149 (99.3%)
 - Overall Pass Rate: 99%+
 
-🔬 Research Integrity
-This project emphasizes verifiable results and research transparency:
+🔬 Research Integrity  
+This project emphasizes verifiable results and research transparency:  
 
 - All cryptographic tests are reproducible with fixed test vectors
 - Performance data is empirically measured across multiple platforms
