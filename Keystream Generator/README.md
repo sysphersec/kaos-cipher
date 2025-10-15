@@ -5,42 +5,24 @@ Generates high-quality pseudorandom sequences for cryptographic validation and t
 
 ## Features
 
-- 256-bit keys & 96-bit nonces - Cryptographic parameters
-- Lorenz attractor-based - Chaotic system for unpredictability
-- Reproducible output - Fixed test vectors for consistent validation
-- Multiple test suite ready - Output compatible with NIST STS, Dieharder, ENT
+- **Fixed test vectors** - Reproducible 0x42 key & 0x99 nonce for consistent validation
+- **Progress tracking** - Real-time generation progress for large files
+- **Built-in quality checks** - Bit balance and chi-squared analysis
+- **Performance metrics** - Throughput measurement and timing statistics
+- **Multi-size ready** - Optimized for 1MB to 1GB+ test streams
 
 ## Usage
 
-## Compile
-```bash 
-make
+```bash
+# Compile and generate keystream
+make && ./keystream_generator <size> <output>
 ```
-## Generate keystream for testing
-```bash 
-./keystream_generator <size_in_bytes> <output_file>
+```bash
+# Examples
+./keystream_generator 1000000 kaos_1mb.bin        # 1MB - Quick tests
+./keystream_generator 100000000 kaos_100mb.bin    # 100MB - NIST STS  
+./keystream_generator 1000000000 kaos_1gb.bin     # 1GB - Extensive testing
 ```
-## Examples
-
-## 1MB for quick validation
-```bash 
-./keystream_generator 1000000 kaos_1mb.bin
-```
-## 100MB for NIST STS testing  
-```bash 
-./keystream_generator 100000000 kaos_100mb.bin
-```
-## 1GB for extensive statistical testing
-```bash 
-./keystream_generator 1000000000 kaos_1gb.bin
-```
-## Output Validation
-
-The generator includes built-in quality checks:
-- Bit balance analysis (target: 50%)
-- Chi-squared uniformity test
-- Generation throughput metrics
-
 ## Recommended Test Sizes
 
 Test Suite | Minimum Size | Recommended Size
