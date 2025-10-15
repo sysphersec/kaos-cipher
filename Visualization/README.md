@@ -15,10 +15,11 @@ Generates real-time animations of the cryptographic process.
 `make`
 
 ## Generate visualization HTML
+
+**Simply run the visualizer or**  
 `make generate`
 
-**Output**: `animation.html` - Self-contained interactive 3D visualization  
-**or simply run the visualizer**
+**Output**: `animation.html` - Self-contained interactive 3D visualization
 
 ## Technical Details
 
