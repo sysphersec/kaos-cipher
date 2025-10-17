@@ -108,12 +108,12 @@ class KaosCipher:
         pi = 3.14159265358979323846   # Pi
         
         # Core Lorenz combination
-        combinado = (x * phi) + (y * e) + (z * pi)
-        fractional = abs(combinado) - math.floor(abs(combinado))
+        combined = (x * phi) + (y * e) + (z * pi)
+        fractional = abs(combined) - math.floor(abs(combined))
         
         # Counter-based perturbation for uniqueness
-        perturbacion = counter * 0.0000001  # Small perturbation
-        fractional = math.fmod(fractional + perturbacion, 1.0)
+        perturbation = counter * 0.0000001  # Small perturbation
+        fractional = math.fmod(fractional + perturbation, 1.0)
         
         # Convert to byte
         byte_val = int(fractional * 256.0) & 0xFF
