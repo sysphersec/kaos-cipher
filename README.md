@@ -27,7 +27,7 @@ KAOS Cipher is a novel stream cipher that leverages the mathematical properties 
 | Average Correlation | 0.000739 | Excellent |
 | Dieharder Tests Passed | 111/114 (97.4%) | Excellent |
 | NIST STS Pass Rate | 99%+ | Validated |
-| Performance | 50-70 MB/s | Practical |
+| Performance | 32 MB/s | Practical |
 
 ## 🔧  Basic Usage
 ```c
