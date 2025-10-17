@@ -93,10 +93,7 @@ Compile: `gcc -o example example.c ./src/kaos.c -I./src -lm`
 ---
 
 ## 📚 Academic Papers
-
-- **IACR ePrint**: *Under Editorial Review* - KAOS Cipher: A Chaotic Stream Cipher Based on Lorenz Attractor
-- **Status**: Submitted to Cryptology ePrint Archive - Decision expected within 48 hours
-- **Pre-print Available**: Upon publication at IACR ePrint
+- **IACR ePrint**: *Under Editorial Review* - Decision expected within 48h
 ---
 
 ## 🤝 Contributing
