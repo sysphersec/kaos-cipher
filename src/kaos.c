@@ -84,12 +84,12 @@ uint8_t kaos_keystream_byte(double x, double y, double z, uint64_t counter) {
     const double pi = 3.14159265358979323846;   // Pi
     
     // Core Lorenz combination
-    double combinado = (x * phi) + (y * e) + (z * pi);
-    double fractional = fabs(combinado) - floor(fabs(combinado));
+    double combined = (x * phi) + (y * e) + (z * pi);
+    double fractional = fabs(combined) - floor(fabs(combined));
     
     // Counter-based perturbation for uniqueness
-    double perturbacion = counter * 0.0000001; // Small perturbation
-    fractional = fmod(fractional + perturbacion, 1.0);
+    double perturbation = counter * 0.0000001; // Small perturbation
+    fractional = fmod(fractional + perturbation, 1.0);
     
     // Convert to byte
     uint8_t byte = (uint8_t)(fractional * 256.0);
