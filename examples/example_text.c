@@ -35,7 +35,7 @@ void print_text(const char* label, const uint8_t* data, size_t len) {
     printf("\"\n");
 }
 
-int main() {
+int main(void) {
     printf("=== KAOS CIPHER - TEXT ENCRYPTION DEMO ===\n\n");
     
     // Initialize random seed
